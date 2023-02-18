@@ -13,7 +13,8 @@ const password=document.getElementById("password").value;
 const obj={
     email:email,
     username:username,
-    password:password
+    password:password,
+    quizes:[]
 }
 
 users.push(obj);

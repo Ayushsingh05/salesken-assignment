@@ -1,4 +1,4 @@
-const data = [
+export  const data = [
   
   {
     question: "What is the capital of Japan?",
