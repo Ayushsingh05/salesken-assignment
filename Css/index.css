@@ -1,80 +1,31 @@
-/* Quiz Box */
-#quiz_container{
-  display: none !important;
+
+#select_questions {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  width: 18%;
+  margin: auto;
+  margin-bottom: 20px ;
+  margin-top: 25px;
+  font-size: 18px;
 }
-#quiz-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    
-  }
-  
-  .quiz-title {
-    text-align: center;
-    font-size: 2em;
-    margin-bottom: 20px;
-  }
-  
-  #quiz-question {
-    margin-bottom: 20px;
-  }
-  
-  .question-text {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-  }
-  
-  .choices {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 10px;
-  }
-  
-  .choices label {
-    display: block;
-    width: 50%;
-    margin-bottom: 10px;
-    font-size: 1.2em;
-  }
-  
-  .choices input[type="radio"] {
-    display: none;
-  }
-  
-  .choices label:before {
-    content: "";
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    margin-right: 10px;
-    border: 2px solid #aaa;
-    border-radius: 50%;
-    vertical-align: middle;
-  }
-  
-  .choices input[type="radio"]:checked + label:before {
-    background-color: #007bff;
-    border-color: #007bff;
-  }
-  
-  .submit-button {
-    display: block;
-    margin: 0 auto;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-  }
-  
-  .submit-button:hover {
-    background-color: #0062cc;
-  }
-  
-/* Quiz Box */
+
+#select_questions select {
+  margin-left: 10px;
+  font-size: 16px;
+  padding: 5px 30px 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23444%"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat;
+  background-position: right 10px center;
+  background-size: 20px;
+}
+
+#select_questions select:focus {
+  outline: none;
+  box-shadow: 0 0 3px #008CBA;
+  border-color: #008CBA;
+}

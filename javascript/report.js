@@ -45,25 +45,14 @@ const correctQuestions=(arr)=>{
         button.innerText="Details";
         button.addEventListener('click',()=>{
           showDetails(el);
+          document.getElementById("preview-popup").style.display="block";
         })
         document.querySelector(".container").append(div,button);
   }
-//   answer
-// : 
-// "Tokyo"
-// choices
-// : 
-// ["Osaka", "Kyoto", "Tokyo", "Hiroshima"]
-// choosed
-// : 
-// "Kyoto"
-// question
-// : 
-// "What is the capital of Japan?
-const showData =(el)=>{
+const showData =(el,i)=>{
 const card= document.createElement('div');
 const h3=document.createElement('h3');
-h3.innerText=`Q :- ${el.question}`;
+h3.innerText=`Q ${i+1} :- ${el.question}`;
 const div= document.createElement('div');
 const p1=document.createElement('p');
 p1.innerText=`Correct option :- ${el.answer}`
@@ -77,23 +66,32 @@ const p3=document.createElement('p');
 if(el.choosed){
   if(el.choosed==el.answer){
     p3.innerText=`Correct`
+    p3.style.color="green"
   }
   else{
     p3.innerText=`Incorrect`
+    p3.style.color="red"
   }
 }
 else{
   p3.innerText=`Not Attempted`
+  p3.style.color="orange"
 }
+p3.style.fontWeight="900"
 div.append(p3);
+card.append(h3,div);
+document.getElementById("popup_data").append(card);
 }
   const showDetails=(el)=>{
     let allQuestions=[...el.attempted,...el.skipped];
-    allQuestions.map((el)=>{
-  showData(el)
+    // console.log(allQuestions);
+    document.getElementById("popup_data").innerHTML="";
+    allQuestions.map((el,i)=>{
+  showData(el,i)
     })
   }
-// Get the preview button and preview container elements
-// const mixedArray=[...]
+document.getElementById("close_popup").addEventListener("click",()=>{
+  document.getElementById("preview-popup").style.display="none";
+})
 
 display();

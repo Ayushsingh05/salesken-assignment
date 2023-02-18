@@ -1,15 +1,120 @@
-/* Navbar */
 
-#navbar,#navbar>div{
-display: flex;
-justify-content: space-between;
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  background-color: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0 20px;
 }
 #navbar>div{
-    width: 15%;
+    display: flex;
+    justify-content: space-around;
 }
-#navbar img{
-    width: 30px;
-    height: 30px;
+#navbar>div img,span,button{
+margin-right:25px ;
+}
+.logo-container {
+  flex: 1;
 }
 
-/* Navbar */
+.user-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+ img {
+  width: 30px ;
+  height: 30px ;
+  border-radius: 50%;
+}
+
+#nav-username {
+  font-weight: bold;
+  vertical-align: middle;
+  margin-top: 5px;
+}
+
+#login_logout_button {
+  background-color: #008CBA;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#login_logout_button:hover {
+  background-color: #005f75;
+}
+
+/* Quiz Container Styles */
+
+#quiz-container {
+  margin: 40px auto;
+  max-width: 600px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-title {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+#quiz-question {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.next-button, .submit-button {
+  background-color: #008CBA;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.next-button:hover, .submit-button:hover {
+  background-color: #005f75;
+}
+
+#submit-button {
+  background-color: #4CAF50;
+}
+
+#submit-button:hover {
+  background-color: #2E8B57;
+}
+
+/* Start Quiz Button Styles */
+
+#quiz_start_button {
+  display: block;
+  margin: 40px auto;
+  padding: 10px 20px;
+  background-color: #008CBA;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#quiz_start_button:hover {
+  background-color: #005f75;
+}
