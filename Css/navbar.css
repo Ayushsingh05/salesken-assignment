@@ -1,0 +1,15 @@
+/* Navbar */
+
+#navbar,#navbar>div{
+display: flex;
+justify-content: space-between;
+}
+#navbar>div{
+    width: 15%;
+}
+#navbar img{
+    width: 30px;
+    height: 30px;
+}
+
+/* Navbar */
