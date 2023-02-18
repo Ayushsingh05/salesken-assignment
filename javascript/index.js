@@ -8,7 +8,7 @@ const obj={
 attempted:[],
 skipped:[],
 }
-const arr=data.splice(0,2);
+const arr=data.splice(0,15);
 let index=1;
 if(loggedIn){
 document.getElementById("login_logout_button").innerText="Logout";
