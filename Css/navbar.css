@@ -1,5 +1,7 @@
 
 #navbar {
+    position: sticky;
+    top: 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -7,6 +9,11 @@
   background-color: #fff;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   padding: 0 20px;
+  margin-top: -6px;
+}
+#navbar>h1{
+    margin:5px -100px 0 50px;
+
 }
 #navbar>div{
     display: flex;
@@ -37,7 +44,7 @@ margin-right:25px ;
   margin-top: 5px;
 }
 
-#login_logout_button {
+.navbar_button {
   background-color: #008CBA;
   color: #fff;
   border: none;
@@ -47,7 +54,7 @@ margin-right:25px ;
   transition: background-color 0.2s ease-in-out;
 }
 
-#login_logout_button:hover {
+.navbar_button:hover {
   background-color: #005f75;
 }
 

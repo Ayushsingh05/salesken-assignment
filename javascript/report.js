@@ -1,6 +1,37 @@
+import navbar from "../components/Navbar/navbar.js";
+document.getElementById("navbar").innerHTML=navbar();
+
+
+const home=document.getElementById("home_or_report");
+home.innerText="Home"
+home.addEventListener("click",()=>{
+  location.href="./index.html"
+})
+
 const users= JSON.parse(localStorage.getItem('users'))||[];
 const user = JSON.parse(localStorage.getItem("userDetails"))||{};
+const loggedIn=localStorage.getItem('loggedIn')|| false;
+if(loggedIn){
+  document.getElementById("login_logout_button").innerText="Logout";
+  document.getElementById("nav-username").innerText=user.username.split(" ")[0];
+  }
+  else{
+      document.getElementById("login_logout_button").innerText="Login";
+      location.href="../Pages/login.html"
+  }
+
+const handleLogout=()=>{
+  localStorage.setItem('loggedIn',false);
+  location.href="../Pages/login.html"
+}
+document.getElementById("login_logout_button").addEventListener('click',handleLogout)
+
 const detail=users.find(el=>el.email===user.email)
+if(detail.quizes.length===0){
+  const h4=document.createElement('h4');
+  h4.innerText="Report is Empty ,Please Take a Quiz";
+  document.querySelector(".container").append(h4);
+}
 const display=()=>{
 detail.quizes.map(el=>displayCard(el));
 }
@@ -40,14 +71,14 @@ const correctQuestions=(arr)=>{
         const p5 = document.createElement('p');
         
         p5.innerText=`Incorrect Questions : ${Math.abs(correctQuestions(el.attempted)-el.attempted.length)}`
-        div.append(p1,p2,p3,p4,p5)
         const button= document.createElement('button');
         button.innerText="Details";
         button.addEventListener('click',()=>{
           showDetails(el);
           document.getElementById("preview-popup").style.display="block";
         })
-        document.querySelector(".container").append(div,button);
+        div.append(p1,p2,p3,p4,p5,button)
+        document.querySelector(".container").append(div);
   }
 const showData =(el,i)=>{
 const card= document.createElement('div');
@@ -84,7 +115,6 @@ document.getElementById("popup_data").append(card);
 }
   const showDetails=(el)=>{
     let allQuestions=[...el.attempted,...el.skipped];
-    // console.log(allQuestions);
     document.getElementById("popup_data").innerHTML="";
     allQuestions.map((el,i)=>{
   showData(el,i)
@@ -93,5 +123,7 @@ document.getElementById("popup_data").append(card);
 document.getElementById("close_popup").addEventListener("click",()=>{
   document.getElementById("preview-popup").style.display="none";
 })
-
+document.getElementById("takeQuiz").addEventListener("click",()=>{
+  location.href="../index.html"
+})
 display();

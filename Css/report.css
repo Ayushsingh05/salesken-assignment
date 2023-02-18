@@ -1,7 +1,10 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f1f1f1;
+    background-color:lightcyan;
+  }
+  #navbar+h1{
+    margin-top:50px ;
   }
   #preview-popup{
     display: none;
@@ -22,11 +25,15 @@ body {
     max-width: 400px;
    text-align: center;
     margin: 0 auto;
-    padding: 20px ;
+    padding: 20px  0;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
- 
+  .container>div:not(:last-child){
+    padding-bottom: 15px;
+    border-bottom: 1.5px dotted black;
+
+  }
   .container button{
     padding: 5px 8px;
     background-color: teal;
@@ -66,4 +73,14 @@ body {
     text-decoration: none;
     cursor: pointer;
   }
+
+  #takeQuiz{
+    position: relative;
+    margin-top: 25px;
+    left: 58% ;
+  }
+  
+  
+  
+  
   

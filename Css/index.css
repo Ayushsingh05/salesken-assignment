@@ -1,4 +1,9 @@
-
+body{
+  background-color: lightcyan;
+}
+#center_div{
+  margin-top: 150px;
+}
 #select_questions {
   display: flex;
   text-align: center;
@@ -11,6 +16,8 @@
 }
 
 #select_questions select {
+  background-color: white !important;
+
   margin-left: 10px;
   font-size: 16px;
   padding: 5px 30px 5px 10px;
@@ -26,6 +33,11 @@
 
 #select_questions select:focus {
   outline: none;
+  border: none;
   box-shadow: 0 0 3px #008CBA;
   border-color: #008CBA;
+}
+
+#quiz-container{
+  display: none;
 }

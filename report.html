@@ -3,16 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <title>Quiz Dashboard</title>
-    <link rel="stylesheet" href="../Css/report.css" />
+    <link rel="stylesheet" href="./Css/navbar.css">
+    <link rel="stylesheet" href="./Css/report.css" />
   </head>
   <body>
-    <h1>Quiz Dashboard</h1>
+    <div id="navbar"></div>
+    <h1>Quiz Report</h1>
     <div class="container">
     </div>
+    <button class="navbar_button" id="takeQuiz">Take Quiz</button>
     <div class="popup" id="preview-popup">
       <span class="close" id="close_popup">&times;</span>
       <div id="popup_data"></div>
     </div>
-    <script src="../javascript/report.js"></script>
   </body>
-</html>
+  </html>
+  <script type="module" src="./javascript/report.js"></script>
