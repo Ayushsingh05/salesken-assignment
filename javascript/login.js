@@ -1,9 +1,9 @@
 
-
+// users is a array of all the signup users 
 const users=JSON.parse(localStorage.getItem("users"))||[];
 
 
-
+// handle login validate the email and pasword after successfull validation user will redirected to home page
 const handleLogin = ()=>{
     event.preventDefault();
     const email= document.getElementById("email").value;
@@ -26,4 +26,5 @@ const handleLogin = ()=>{
     alert("user doesn't exist first signup");
    }
 }
+// form invoked handleLogin function on submit
 document.getElementById("login-form").addEventListener("submit",handleLogin);
