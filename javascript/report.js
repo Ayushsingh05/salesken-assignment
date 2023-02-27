@@ -1,7 +1,18 @@
 // importing navbar from component
 import navbar from "../components/Navbar/navbar.js";
 document.getElementById("navbar").innerHTML=navbar();
-
+const initialCall=()=>{
+  const user= JSON.parse(localStorage.getItem("userDetails"))||{};
+  
+  if (user.username) {
+    document.getElementById("nav-username").innerText=user.username.split(" ")[0];
+    document.getElementById("login_logout_button").innerText="Logout";
+   
+  } else {
+    location.href="../Pages/login.html"
+  }
+}
+initialCall();
 // // targetting the button with id:-home_or_report and change the inner text to Home onclick it will be redirected to Home Page
 const home=document.getElementById("home_or_report");
 home.innerText="Home"
@@ -13,19 +24,13 @@ const users= JSON.parse(localStorage.getItem('users'))||[];
 const user = JSON.parse(localStorage.getItem("userDetails"))||{};
 const loggedIn=localStorage.getItem('loggedIn')|| false;
 // if user is loggedIn only then he can take quiz else he will redirected to login Page
-if(loggedIn){
-  document.getElementById("login_logout_button").innerText="Logout";
-  document.getElementById("nav-username").innerText=user.username.split(" ")[0];
-  }
-  else{
-      document.getElementById("login_logout_button").innerText="Login";
-      location.href="../Pages/login.html"
-  }
+
   // handleLogout will set loggedIn as a false and will redirected to Login Page
-const handleLogout=()=>{
-  localStorage.setItem('loggedIn',false);
-  location.href="../Pages/login.html"
-}
+  const handleLogout=()=>{
+    localStorage.removeItem("userDetails");
+    localStorage.setItem('loggedIn',false);
+    location.href="../Pages/login.html"
+  }
 document.getElementById("login_logout_button").addEventListener('click',handleLogout);
 
 // fiding user from a users Array
