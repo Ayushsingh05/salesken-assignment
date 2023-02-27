@@ -23,17 +23,19 @@ skipped:[],
 const arr=data.splice(0,quantity);
 let index=1;
 // if user is loggedIn only then he can take quiz else he will redirected to login Page
-if(loggedIn){
-document.getElementById("login_logout_button").innerText="Logout";
-document.getElementById("nav-username").innerText=user.username.split(" ")[0];
-}
-else{
-    document.getElementById("login_logout_button").innerText="Login";
-    document.getElementById("quiz_start_button").disabled=true; 
+const initialCall=()=>{
+  const user= JSON.parse(localStorage.getItem("userDetails"))||{};
+  
+  if (user.username) {
+    document.getElementById("nav-username").innerText=user.username.split(" ")[0];
+    document.getElementById("login_logout_button").innerText="Logout";
+    document.getElementById("quiz_start_button").disabled=false;
+  } else {
     location.href="../Pages/login.html"
-}
-// handleLogout will set loggedIn as a false and will redirected to Login Page
+  }
+}// handleLogout will set loggedIn as a false and will redirected to Login Page
 const handleLogout=()=>{
+  localStorage.removeItem("userDetails");
   localStorage.setItem('loggedIn',false);
   location.href="../Pages/login.html"
 }
@@ -162,3 +164,4 @@ document.getElementById("submit-button").addEventListener("click",nextQuestion);
 document.getElementById("next-button").addEventListener("click",skipQuestion);
 
 showQuestion(0);
+initialCall();

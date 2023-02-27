@@ -23,7 +23,7 @@ const handleLogin = ()=>{
      }
    }
    else{
-    alert("user doesn't exist first signup");
+    alert("User is not Registered");
    }
 }
 // form invoked handleLogin function on submit

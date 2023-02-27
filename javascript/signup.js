@@ -7,7 +7,15 @@ const handleSubmit = () => {
   const email = document.getElementById("email").value;
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
+  
+  const user= users.find(el=>el.email === email);
 
+  if(user){
+    alert("User already exists");
+  }
+  else{
+
+  
   // obj is a user schema which is stored in users array
   const obj = {
     email: email,
@@ -24,6 +32,7 @@ const handleSubmit = () => {
   document.getElementById("username").value = "";
   document.getElementById("password").value = "";
   location.href = "./login.html";
+}
 };
 
 document.getElementById("signup-form").addEventListener("submit", handleSubmit);
